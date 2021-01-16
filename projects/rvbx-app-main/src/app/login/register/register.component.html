@@ -116,15 +116,15 @@
       >
     </rvbx-input>
     <div class="box-buttons">
-      <button
-        class="primary-button"
-        type="submit"
-        [disabled]="loginForm.invalid"
-      >
+      <button rvbxButton type="submit" [disabled]="loginForm.invalid">
         Cadastrar
       </button>
-      <button class="secondary-button" type="button" routerLink="/login/form">
-        <span>Voltar</span>
+      <button
+        rvbxButton="secondaryButton"
+        type="button"
+        routerLink="/login/form"
+      >
+        Voltar
       </button>
     </div>
   </form>

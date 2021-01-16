@@ -7,6 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "experimentalDecorators": true,
     "types": [],
     "lib": [
       "dom",
@@ -16,7 +17,8 @@
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "experimentalDecorators": true,
   },
   "exclude": [
     "src/test.ts",

@@ -26,7 +26,7 @@ import { ErrorTemplateComponent } from './error-template/error-template.componen
     CommonModule,
     LoginRoutingModule,
     RvbxDesignSystemModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class LoginModule { }

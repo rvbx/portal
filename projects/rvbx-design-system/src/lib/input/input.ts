@@ -20,7 +20,7 @@ export class InputComponent implements OnInit {
 export class InputDirective {
 
   constructor(
-    protected _elementRef: ElementRef<HTMLInputElement>
+    private _elementRef: ElementRef<HTMLInputElement>
   ) {
     _elementRef.nativeElement;
   }
