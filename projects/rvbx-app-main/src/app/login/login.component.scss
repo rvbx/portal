@@ -1,0 +1,83 @@
+@import "~@rvbx/design-styles/scss/mixins/breakpoints";
+
+.background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right top, #880177, #fd5800);
+  padding: 0 20px;
+  .banner {
+    background: url("~@rvbx/design-styles/assets/background-login.jpg")
+      no-repeat;
+    background-size: cover;
+    border-radius: 14px;
+    background-position: center right; //tablet = bottom right
+    padding: 54px 28px;
+    margin: 0 72px;
+    box-shadow: 0 0 4px;
+    @include breakpoint_below(md) {
+      margin: 0;
+    }
+    @include breakpoint_below(sm) {
+      padding: 54px 0 0 0;
+    }
+    .first {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include breakpoint_below(sm) {
+        align-items: center;
+      }
+      h1 {
+        margin: 0;
+        span.logo {
+          display: flex;
+          background: url("~@rvbx/design-styles/assets/rvbx-logo6.svg")
+            no-repeat;
+          height: 36px;
+          width: 150px;
+          margin: 10px 0;
+        }
+      }
+    }
+    .second {
+      box-shadow: 0 0 6px;
+      border-radius: 8px;
+      background-color: white;
+      .login-box {
+        min-height: 468px;
+      }
+    }
+    .third {
+      display: flex;
+      justify-content: center;
+      @include breakpoint_above(sm) {
+        display: none;
+      }
+    }
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      width: 176px;
+      i {
+        color: #ffffff;
+        font-size: 40px;
+        background-color: #000000b3;
+        line-height: 36px;
+        font-weight: 400;
+        height: 36px;
+        border-radius: 8px;
+      }
+      &.icons-desk {
+        @include breakpoint_below(sm) {
+          display: none;
+        }
+      }
+      &.icons-mobile {
+        margin: 16px 8px;
+      }
+    }
+  }
+}

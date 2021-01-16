@@ -1,0 +1,37 @@
+.login-error-template {
+  padding: 38px 28px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  color: #737373;
+  align-items: center;
+  h2 {
+    margin: 0 0 40px;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    padding: 14px 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    &.primary-button {
+      color: #fff;
+      opacity: 90%;
+      background-image: linear-gradient(to right top, #880177, #fd5800);
+    }
+    &.secondary-button {
+      color: #737373;
+      border: thin solid #737373;
+      background-color: #ffffff00;
+    }
+    &:hover {
+      opacity: 95%;
+    }
+    &:active {
+      opacity: 100%;
+    }
+  }
+}

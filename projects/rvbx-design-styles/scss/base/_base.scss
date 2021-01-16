@@ -1,0 +1,21 @@
+@import "../settings/settings";
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $font-base;
+  background-color: #d3d3d3;
+}
+
+// Grid
+@import "grid/grid";
+@import "grid/cell";

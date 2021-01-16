@@ -1,0 +1,75 @@
+@import "../../settings/settings";
+@import "../../mixins/breakpoints";
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+
+  * {box-sizing: border-box;}
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  // vertical alignment
+  &.align-top {align-items: flex-start;}
+  &.align-middle {align-items: center;}
+  &.align-bottom {align-items: flex-end;}
+
+  &.justify-top {justify-content: flex-start;}
+  &.justify-middle {justify-content: center;}
+  &.justify-bottom {justify-content: flex-end;}
+
+
+  // Desktop
+  @include breakpoint_above(sm) {
+    $cell-size: (100% / $grid-columns-desktop);
+
+    width: calc(100% + #{$cell-gutter-desktop});
+    margin-left: ($cell-gutter-desktop / 2) * -1;
+    margin-right: ($cell-gutter-desktop / 2) * -1;
+  }
+
+  // Mobile
+  @include breakpoint_below(sm) {
+    margin-left: ($cell-gutter-mobile / 2);
+    margin-right: ($cell-gutter-mobile / 2);
+  }
+}
+
+// 4 Grid
+.grid.grid-4 {
+  @include breakpoint_above(sm) {
+    $cell-size: (100% / 4);
+
+    width: calc(100% + #{$cell-gutter-desktop});
+    margin-left: ($cell-gutter-desktop / 2) * -1;
+    margin-right: ($cell-gutter-desktop / 2) * -1;
+  }
+}
+
+
+// 8 Grid
+.grid.grid-8 {
+  @include breakpoint_above(sm) {
+    $cell-size: (100% / 8);
+
+    width: calc(100% + #{$cell-gutter-desktop});
+    margin-left: ($cell-gutter-desktop / 2) * -1;
+    margin-right: ($cell-gutter-desktop / 2) * -1;
+  }
+}
+
+// 12 Grid
+.grid.grid-12 {
+  @include breakpoint_above(sm) {
+    $cell-size: (100% / 12);
+
+    width: calc(100% + #{$cell-gutter-desktop});
+    margin-left: ($cell-gutter-desktop / 2) * -1;
+    margin-right: ($cell-gutter-desktop / 2) * -1;
+  }
+}

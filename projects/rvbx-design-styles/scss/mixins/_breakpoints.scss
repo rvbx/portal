@@ -1,0 +1,48 @@
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin breakpoint_above($min){
+  @if map_has_key($breakpoints, $min) {
+    $breakpoint: map_get($breakpoints, $min);
+    @media (min-width: $breakpoint) {
+      @content
+    }
+  } @else {
+    @warn 'Breakpoint inválido: #{$min}';
+  }
+}
+
+@mixin breakpoint_below($max){
+  @if map_has_key($breakpoints, $max) {
+    $breakpoint: map_get($breakpoints, $max);
+    @media (max-width: $breakpoint) {
+      @content
+    }
+  } @else {
+    @warn 'Breakpoint inválido: #{$max}';
+  }
+}
+
+@mixin breakpoint_between($min, $max){
+  @if map_has_key($breakpoints, $min) and map_has_key($breakpoints, $max) {
+    $breakpoint_min: map_get($breakpoints, $min);
+    $breakpoint_max: map_get($breakpoints, $max);
+    @media (min-width: $breakpoint_min) and (max-width: ($breakpoint_max - 1)) {
+      @content
+    }
+  } @else {
+    @if (map_has_key($breakpoints, $min)) {
+      @warn 'Breakpoint mínimo inválido: #{$min}';
+    }
+    @if (map_has_key($breakpoints, $max)) {
+      @warn 'Breakpoint máximo inválido: #{$max}';
+    }
+  }
+}

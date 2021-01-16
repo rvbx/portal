@@ -1,0 +1,51 @@
+<div class="background">
+  <div class="container">
+    <div class="banner">
+      <div class="grid grid-12">
+        <div class="cell large-6 first">
+          <h1 title="rvbx">
+            <span class="logo"></span>
+          </h1>
+
+          <div class="icons icons-desk">
+            <a href="https://facebook.com">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://instagram.com">
+              <i class="fab fa-instagram-square"></i>
+            </a>
+            <a href="https://twitter.com">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://linkedin.com">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="cell large-6 second">
+          <div class="login-box" [@routeAnimations]="prepareRoute(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+          </div>
+        </div>
+
+        <div class="cell large-6 third">
+          <div class="icons icons-mobile">
+            <a href="https://facebook.com">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://instagram.com">
+              <i class="fab fa-instagram-square"></i>
+            </a>
+            <a href="https://twitter.com">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://linkedin.com">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

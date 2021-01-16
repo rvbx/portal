@@ -1,0 +1,67 @@
+@import "../../settings/settings";
+@import "../../mixins/breakpoints";
+
+
+.cell {
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  // Desktop
+  @include breakpoint_above(sm) {
+    $cell-size: (100% / $grid-columns-desktop);
+
+    flex-basis: calc(#{$cell-size} - #{$cell-gutter-desktop});
+    margin: 0 ($cell-gutter-desktop / 2);
+
+    // grid sizes
+    @for $i from 1 through $grid-columns-desktop {
+      &.large-#{$i} {
+        flex-basis: calc(#{$cell-size * $i} - #{$cell-gutter-desktop});
+      }
+    }
+  }
+
+  // Mobile
+  @include breakpoint_below(sm) {
+    $cell-size: (100% / $grid-columns-mobile);
+
+    flex-basis: calc(100% - #{$cell-gutter-mobile});
+    margin: 0 ($cell-gutter-mobile / 2);
+
+    // grid sizes
+    @for $i from 1 through $grid-columns-mobile {
+      &.small-#{$i} {
+        flex-basis: calc(#{$cell-size * $i} - #{$cell-gutter-mobile});
+      }
+    }
+
+    .grid {
+      margin-left: ($cell-gutter-mobile / 2) * -1;
+      margin-right: ($cell-gutter-mobile / 2) * -1;
+    }
+  }
+}
+
+@mixin grid-size($size) {
+  .grid-#{$size} .cell {
+    @include breakpoint_above(sm) {
+      $cell-size: (100% / $size);
+
+      flex-basis: calc(#{$cell-size} - #{$cell-gutter-desktop});
+      margin: 0 ($cell-gutter-desktop / 2);
+
+      // grid sizes
+      @for $i from 1 through $size {
+        &.large-#{$i} {
+          flex-basis: calc(#{$cell-size * $i} - #{$cell-gutter-desktop});
+        }
+      }
+
+    }
+  }
+}
+
+@include grid-size(4);
+@include grid-size(8);
+@include grid-size(12);

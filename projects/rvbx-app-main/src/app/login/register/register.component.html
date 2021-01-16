@@ -1,0 +1,131 @@
+<div class="login-register">
+  <form [formGroup]="loginForm" (submit)="register()">
+    <h2>Faça seu cadastro</h2>
+
+    <rvbx-input>
+      <label for="name">Nome</label>
+      <input
+        rvbxInputText
+        formControlName="userName"
+        type="text"
+        name="name"
+        id="name"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userName').touched &&
+          loginForm.get('userName').errors?.required
+        "
+        >Digite seu nome</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userName').touched &&
+          !loginForm.get('userName').errors?.required &&
+          loginForm.get('userName').hasError('minlength')
+        "
+        >O Campo Nome precisa ter mais de 3 letras</small
+      >
+    </rvbx-input>
+
+    <rvbx-input>
+      <label for="lastname">Sobrenome</label>
+      <input
+        rvbxInputText
+        formControlName="userLastName"
+        type="text"
+        name="lastname"
+        id="lastname"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userLastName').touched &&
+          loginForm.get('userLastName').errors?.required
+        "
+        >Digite seu sobrenome</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userLastName').touched &&
+          !loginForm.get('userLastName').errors?.required &&
+          loginForm.get('userLastName').hasError('minlength')
+        "
+        >O Campo Sobrenome precisa ter mais de 3 letras</small
+      >
+    </rvbx-input>
+
+    <rvbx-input>
+      <label for="email">E-mail</label>
+      <input
+        rvbxInputText
+        formControlName="userEmail"
+        type="email"
+        name="email"
+        id="email"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userEmail').touched &&
+          loginForm.get('userEmail').errors?.required
+        "
+        >Digite um e-mail</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userEmail').touched &&
+          !loginForm.get('userEmail').errors?.required &&
+          loginForm.get('userEmail').errors?.email
+        "
+        >Necessário preenchimento de um e-mail válido</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userEmail').touched &&
+          !loginForm.get('userEmail').errors?.required &&
+          !loginForm.get('userEmail').errors?.email &&
+          loginForm.get('userEmail').errors?.userEmailTaken
+        "
+        >E-mail já cadastrado</small
+      >
+    </rvbx-input>
+
+    <rvbx-input>
+      <label for="password">Senha</label>
+      <input
+        rvbxInputText
+        formControlName="userPassword"
+        type="password"
+        name="password"
+        id="password"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userPassword').touched &&
+          loginForm.get('userPassword').errors?.required
+        "
+        >Digite uma senha</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userPassword').touched &&
+          !loginForm.get('userPassword').errors?.required &&
+          loginForm.get('userPassword').errors?.pattern
+        "
+        >Necessário ter mínimo de 8 dígitos, caráter especial, letras maiúsculas
+        e minúsculas</small
+      >
+    </rvbx-input>
+    <div class="box-buttons">
+      <button
+        class="primary-button"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Cadastrar
+      </button>
+      <button class="secondary-button" type="button" routerLink="/login/form">
+        <span>Voltar</span>
+      </button>
+    </div>
+  </form>
+</div>

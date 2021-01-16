@@ -1,0 +1,28 @@
+// Container
+$container-max-width: 972px;
+
+// Grid
+$grid-columns-desktop: 12;
+$grid-columns-mobile: 4;
+$cell-gutter-desktop: 24px;
+$cell-gutter-mobile: 16px;
+
+// Tipografia
+$font-base: "Open Sans", sans-serif;
+$font-light: 300;
+$font-regular: 400;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// Font Awesome Variables
+$fa-font-size-base: 16px !default;
+$fa-font-display: block !default;
+$fa-css-prefix: fa !default;
+
+// Font Awesome Icons
+$fa-var-linkedin: \f08c;
+$fa-var-instagram-square: \e055;
+$fa-var-facebook-square: \f082;
+$fa-var-twitter-square: \f081;
+$fa-var-angle-right: \f105;

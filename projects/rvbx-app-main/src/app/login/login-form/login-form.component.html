@@ -1,0 +1,62 @@
+<div class="login-form">
+  <form [formGroup]="loginForm" (submit)="login()">
+    <h2>Faça seu login</h2>
+
+    <rvbx-input>
+      <label for="email">E-mail</label>
+      <input
+        rvbxInputText
+        formControlName="userEmail"
+        type="email"
+        name="email"
+        id="email"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userEmail').touched &&
+          loginForm.get('userEmail').errors?.required
+        "
+        >Digite um e-mail</small
+      >
+      <small
+        *ngIf="
+          loginForm.get('userEmail').touched &&
+          !loginForm.get('userEmail').errors?.required &&
+          loginForm.get('userEmail').errors?.email
+        "
+        >Digite um e-mail valido</small
+      >
+    </rvbx-input>
+
+    <rvbx-input>
+      <label for="password">Senha</label>
+      <input
+        rvbxInputText
+        formControlName="userPassword"
+        type="password"
+        name="password"
+        id="password"
+      />
+      <small
+        *ngIf="
+          loginForm.get('userPassword').touched &&
+          loginForm.get('userPassword').errors?.required
+        "
+        >Digite uma senha</small
+      >
+    </rvbx-input>
+
+    <button type="submit" [disabled]="loginForm.invalid">Continuar</button>
+
+    <div class="links">
+      <span routerLink="/login/reset-password" routerLinkActive="active">
+        Esqueci minha senha
+        <i class="fa fa-angle-right"></i>
+      </span>
+      <span routerLink="/login/register" routerLinkActive="active">
+        Ainda não sou inscrito
+        <i class="fa fa-angle-right"></i>
+      </span>
+    </div>
+  </form>
+</div>

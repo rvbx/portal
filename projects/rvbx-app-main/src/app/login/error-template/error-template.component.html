@@ -1,0 +1,19 @@
+<div class="login-error-template">
+  <ng-container *ngIf="dadoRecebidoRota == 'login-error'">
+    <h2>Falha ao logar</h2>
+
+    <p>Usuário ou senha digitados estão incorretos.</p>
+
+    <button class="primary-button" routerLink="/login/form">
+      Voltar para o login
+    </button>
+  </ng-container>
+
+  <ng-container *ngIf="dadoRecebidoRota == 'reset-error'">
+    <h2>E-mail não encontrado</h2>
+
+    <p>O e-mail digitado não foi encontrado.</p>
+
+    <button class="primary-button" routerLink="/login/form">Voltar</button>
+  </ng-container>
+</div>
