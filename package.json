@@ -8,6 +8,8 @@
     "build": "ng build",
     "build-lib:styles": "node projects/rvbx-design-styles/copy-styles.js && cd dist/rvbx-design-styles",
     "build-lib:system": "ng build --project=rvbx-design-system && cd dist/rvbx-design-system",
+    "publish-lib:styles": "cd dist/rvbx-design-styles && npm publish",
+    "publish-lib:system": "cd dist/rvbx-design-system && npm publish",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
