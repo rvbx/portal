@@ -19,6 +19,7 @@
     "strictMetadataEmit": true,
     "enableResourceInlining": true,
     "experimentalDecorators": true,
+    "enableIvy": false
   },
   "exclude": [
     "src/test.ts",
